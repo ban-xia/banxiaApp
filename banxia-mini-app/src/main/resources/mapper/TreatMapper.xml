@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="banxia.org.mapper.TreatMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.pojo.Treat" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="treat_id" property="treatId" jdbcType="INTEGER" />
+        <result column="treat_dep_id" property="treatDepId" jdbcType="INTEGER" />
+        <result column="treat_doc_id" property="treatDocId" jdbcType="INTEGER" />
+        <result column="treat_user_id" property="treatUserId" jdbcType="INTEGER" />
+        <result column="treat_price" property="treatPrice" jdbcType="DECIMAL" />
+        <result column="treat_status" property="treatStatus" jdbcType="TINYINT" />
+        <result column="treat_extra" property="treatExtra" jdbcType="VARCHAR" />
+        <result column="deleted" property="deleted" jdbcType="TINYINT" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    </resultMap>
+</mapper>

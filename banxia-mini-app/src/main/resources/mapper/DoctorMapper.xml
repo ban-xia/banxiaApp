@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="banxia.org.mapper.DoctorMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.pojo.Doctor" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="doc_id" property="docId" jdbcType="INTEGER" />
+        <result column="doc_num" property="docNum" jdbcType="VARCHAR" />
+        <result column="doc_password" property="docPassword" jdbcType="VARCHAR" />
+        <result column="doc_name" property="docName" jdbcType="VARCHAR" />
+        <result column="doc_phone" property="docPhone" jdbcType="CHAR" />
+        <result column="doc_age" property="docAge" jdbcType="INTEGER" />
+        <result column="doc_country" property="docCountry" jdbcType="VARCHAR" />
+        <result column="doc_nation" property="docName" jdbcType="VARCHAR" />
+        <result column="doc_address" property="docAddress" jdbcType="VARCHAR" />
+        <result column="doc_dep_id" property="docPedId" jdbcType="INTEGER" />
+        <result column="doc_gender" property="docGender" jdbcType="TINYINT" />
+        <result column="deleted" property="deleted" jdbcType="TINYINT" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    </resultMap>
+</mapper>
