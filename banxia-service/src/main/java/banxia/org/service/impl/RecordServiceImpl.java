@@ -1,6 +1,8 @@
 package banxia.org.service.impl;
 
+import banxia.org.mapper.RecordMapper;
 import banxia.org.service.RecordService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,4 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class RecordServiceImpl implements RecordService {
+
+    @Autowired
+    private RecordMapper recordMapper;
 }

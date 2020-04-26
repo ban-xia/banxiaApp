@@ -1,6 +1,8 @@
 package banxia.org.service.impl;
 
+import banxia.org.mapper.DutyMapper;
 import banxia.org.service.DutyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,4 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DutyServiceImpl implements DutyService {
+
+    @Autowired
+    private DutyMapper dutyMapper;
 }
