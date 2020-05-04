@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="banxia.org.mapper.DepartmentMapper" >
-    <resultMap id="BaseResultMap" type="banxia.org.pojo.Department" >
+<mapper namespace="banxia.org.mapper.DepartmentCustomMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.vo.DepartmentVO" >
         <!--
           WARNING - @mbg.generated
         -->
@@ -10,5 +10,10 @@
         <result column="dep_name" property="depName" jdbcType="VARCHAR" />
         <result column="dep_intro" property="depIntro" jdbcType="VARCHAR" />
         <result column="dep_extra" property="depExtra" jdbcType="VARCHAR" />
+        <result column="deleted" property="deleted" jdbcType="TINYINT" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 </mapper>

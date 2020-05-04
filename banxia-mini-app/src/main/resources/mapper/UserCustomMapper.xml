@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="banxia.org.mapper.UserMapper" >
-    <resultMap id="BaseResultMap" type="banxia.org.pojo.User" >
+<mapper namespace="banxia.org.mapper.UserCustomMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.vo.UserVO" >
         <!--
           WARNING - @mbg.generated
         -->
@@ -18,5 +18,9 @@
         <result column="user_smoke_hist" property="userSmokeHist" jdbcType="TINYINT" />
         <result column="user_drink_hist" property="userDrinkHist" jdbcType="TINYINT" />
         <result column="user_is_married" property="userIsMarried" jdbcType="TINYINT" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 </mapper>

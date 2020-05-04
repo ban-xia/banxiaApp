@@ -1,4 +1,4 @@
-package banxia.org.pojo;
+package banxia.org.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
@@ -13,52 +13,55 @@ import java.util.Date;
  * @author xiexin
  * @create 2020-04-07 4:55 下午
  */
-@ApiModel(value = "诊治")
 @Table(name = "banxia_treat")
-public class Treat {
+public class TreatVO {
 
     /**
      * 自增id
      */
-    @ApiModelProperty(value = "诊治id", name = "treatId", example = "1", required = true)
     @Id
     private Integer treatId;
 
     /**
      * 诊治科室id
      */
-    @ApiModelProperty(value = "诊治科室id", name = "treatDepId", example = "2", required = true)
     private Integer treatDepId;
 
     /**
      * 诊治医生id
      */
-    @ApiModelProperty(value = "诊治医生id", name = "treatDocId", example = "1", required = true)
     private Integer treatDocId;
 
     /**
      * 诊治患者id
      */
-    @ApiModelProperty(value = "诊治患者id", name = "treatUserId", example = "1", required = true)
     private Integer treatUserId;
 
     /**
      * 诊治价格
      */
-    @ApiModelProperty(value = "诊治价格", name = "treatPrice", example = "23.6", required = true)
     private Double treatPrice;
 
     /**
      * 诊治状态
      */
-    @ApiModelProperty(value = "诊治状态", name = "treatStatus", example = "0", required = true)
     private Integer treatStatus;
 
     /**
      * 诊治补充
      */
-    @ApiModelProperty(value = "诊治补充", name = "treatExtra", example = "-")
     private String treatExtra;
+
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date createdAt;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date updatedAt;
+
+    private String createdBy;
+
+    private String updatedBy;
 
 
     public Integer getTreatId() {
@@ -117,4 +120,35 @@ public class Treat {
         this.treatExtra = treatExtra;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
 }

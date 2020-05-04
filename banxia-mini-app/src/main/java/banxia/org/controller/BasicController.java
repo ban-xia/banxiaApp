@@ -14,4 +14,6 @@ public class BasicController {
 
     @Autowired
     public RedisOperator redis;
+
+    public static final int PAGE_SIZE = 10;
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="banxia.org.mapper.DutyCustomMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.vo.DutyVO" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="duty_id" property="dutyId" jdbcType="INTEGER" />
+        <result column="duty_date" property="dutyDate" jdbcType="TIMESTAMP" />
+        <result column="duty_depart_id" property="dutyDepartId" jdbcType="INTEGER" />
+        <result column="duty_period" property="dutyPeriod" jdbcType="TINYINT"/>
+        <result column="duty_doc_id" property="dutyDocId" jdbcType="INTEGER" />
+        <result column="duty_on_duty" property="dutyOnDuty" jdbcType="TINYINT" />
+        <result column="doc_name" property="docName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectAllDuty" resultMap="BaseResultMap" parameterType="String">
+        select duty.*, doc.doc_name from banxia_duty duty
+        left join banxia_department dep on dep.dep_id = duty.duty_depart_id
+        left join banxia_doctor doc on doc.doc_id = duty.duty_doc_id
+        where
+        1 = 1
+        and duty.duty_depart_id = ${depId}
+        and duty.duty_period = ${noon}
+        and duty.duty_date between '${starttime}' and '${endtime}'
+        and duty_on_duty = 0
+    </select>
+</mapper>

@@ -1,88 +1,49 @@
-package banxia.org.pojo;
+package banxia.org.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * 医生表
- * @author xiexin
- * @create 2020-04-07 5:03 下午
+ * @author: 紫苏
+ * @date: 2020/5/4 上午12:15
+ * @description:
  */
-@ApiModel(value = "医生")
-@Table(name = "banxia_doctor")
-public class Doctor {
+public class DoctorVO {
 
-    /**
-     * 自增id
-     */
-    @ApiModelProperty(value = "医生id", name = "docId", example = "1", required = true)
-    @Id
     private Integer docId;
 
-    /**
-     * 医生编号
-     */
-    @ApiModelProperty(value = "医生编号", name = "docNum", example = "sjnk_wuyanzu", required = true)
     private String docNum;
 
-    /**
-     * 医生编号
-     */
-    @ApiModelProperty(value = "医生密碼", name = "docPassword", example = "", required = true)
-    private String docPassword;
-
-    /**
-     * 医生名称
-     */
-    @ApiModelProperty(value = "医生名称", name = "docName", example = "wuyanzu", required = true)
     private String docName;
 
-    /**
-     * 医生电话
-     */
-    @ApiModelProperty(value = "医生手机号", name = "docPhone", example = "15771803174", required = true)
     private String docPhone;
 
-    /**
-     * 医生年龄
-     */
-    @ApiModelProperty(value = "医生年龄", name = "docAge", example = "28", required = true)
     private Integer docAge;
 
-    /**
-     * 医生国家
-     */
-    @ApiModelProperty(value = "医生国籍", name = "docCountry", example = "中国", required = true)
     private String docCountry;
 
-    /**
-     * 医生民族
-     */
-    @ApiModelProperty(value = "医生民族", name = "docNation", example = "汉族", required = true)
     private String docNation;
 
-    /**
-     * 医生户籍
-     */
-    @ApiModelProperty(value = "医生户籍", name = "docAddress", example = "-")
     private String docAddress;
 
-    /**
-     * 医生从属科室
-     */
-    @ApiModelProperty(value = "医生从属科室", name = "docPedId", example = "6", required = true)
     private Integer docDepId;
 
-    /**
-     * 医生性别 0女；1男
-     */
-    @ApiModelProperty(value = "医生性别", name = "docGender", example = "0", required = true)
     private Integer docGender;
+
+    private String depName;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date createdAt;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date updatedAt;
+
+    private String createdBy;
+
+    private String updatedBy;
 
     public Integer getDocId() {
         return docId;
@@ -164,11 +125,43 @@ public class Doctor {
         this.docGender = docGender;
     }
 
-    public String getDocPassword() {
-        return docPassword;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setDocPassword(String docPassword) {
-        this.docPassword = docPassword;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public String getDepName() {
+        return depName;
+    }
+
+    public void setDepName(String depName) {
+        this.depName = depName;
     }
 }

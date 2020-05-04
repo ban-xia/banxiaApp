@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="banxia.org.mapper.RecordMapper" >
-    <resultMap id="BaseResultMap" type="banxia.org.pojo.Record" >
+<mapper namespace="banxia.org.mapper.RecordCustomMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.vo.RecordVO" >
         <!--
           WARNING - @mbg.generated
         -->
@@ -11,5 +11,9 @@
         <result column="rec_user_id" property="recUserId" jdbcType="INTEGER" />
         <result column="rec_intro" property="recIntro" jdbcType="VARCHAR" />
         <result column="rec_extra" property="recExtra" jdbcType="VARCHAR" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 </mapper>

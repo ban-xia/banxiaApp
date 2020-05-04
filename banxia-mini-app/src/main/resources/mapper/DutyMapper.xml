@@ -11,10 +11,11 @@
         <result column="duty_period" property="dutyPeriod" jdbcType="TINYINT" />
         <result column="duty_doc_id" property="dutyDocId" jdbcType="INTEGER" />
         <result column="duty_on_duty" property="dutyOnDuty" jdbcType="TINYINT" />
-        <result column="deleted" property="deleted" jdbcType="TINYINT" />
-        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
-        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
-        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
-        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
+    
+    <insert id="insertDuty">
+        INSERT INTO banxia_duty
+        (duty_date, duty_depart_id, duty_period, duty_doc_id, duty_on_duty)
+        VALUES('${datetime}',${depId},${noon},${docId},0);
+    </insert>
 </mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="banxia.org.mapper.DoctorCustomMapper" >
+    <resultMap id="BaseResultMap" type="banxia.org.vo.DoctorVO" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="doc_id" property="docId" jdbcType="INTEGER" />
+        <result column="doc_num" property="docNum" jdbcType="VARCHAR" />
+        <result column="doc_name" property="docName" jdbcType="VARCHAR" />
+        <result column="doc_phone" property="docPhone" jdbcType="CHAR" />
+        <result column="doc_age" property="docAge" jdbcType="INTEGER" />
+        <result column="doc_country" property="docCountry" jdbcType="VARCHAR" />
+        <result column="doc_nation" property="docNation" jdbcType="VARCHAR" />
+        <result column="doc_address" property="docAddress" jdbcType="VARCHAR" />
+        <result column="doc_dep_id" property="docDepId" jdbcType="INTEGER" />
+        <result column="doc_gender" property="docGender" jdbcType="TINYINT" />
+        <result column="dep_name" property="depName" jdbcType="VARCHAR" />
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAllDoctors" resultMap="BaseResultMap" parameterType="String">
+        select doc.*, dep.dep_name from banxia_doctor doc
+        left join banxia_department dep on dep.dep_id = doc.doc_dep_id
+        left join banxia_duty duty on duty.duty_doc_id = doc.doc_id
+        where
+        1 = 1
+        <if test="name != null and name != ''">
+            and doc.doc_name like '%${name}%'
+        </if>
+        <if test="datetime != null and datetime != ''">
+            and duty.duty_date = '${datetime}'
+        </if>
+        and doc.deleted = 0
+        and doc.doc_dep_id = ${depId}
+    </select>
+</mapper>

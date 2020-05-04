@@ -1,4 +1,4 @@
-package banxia.org.pojo;
+package banxia.org.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
@@ -15,7 +15,7 @@ import java.util.Date;
  */
 @ApiModel(value = "病历")
 @Table(name = "banxia_record")
-public class Record {
+public class RecordVO {
 
     /**
      *自增id
@@ -53,6 +53,32 @@ public class Record {
      */
     @ApiModelProperty(value = "病历补充", name = "recExtra", example = "-")
     private String recExtra;
+
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @ApiModelProperty(hidden = true)
+    private Date createdAt;
+
+    /**
+     * 修改时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @ApiModelProperty(hidden = true)
+    private Date updatedAt;
+
+    /**
+     * 创建者
+     */
+    @ApiModelProperty(hidden = true)
+    private String createdBy;
+
+    /**
+     * 修改者
+     */
+    @ApiModelProperty(hidden = true)
+    private String updatedBy;
 
     public Integer getRecId() {
         return recId;
@@ -102,4 +128,35 @@ public class Record {
         this.recExtra = recExtra;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
 }

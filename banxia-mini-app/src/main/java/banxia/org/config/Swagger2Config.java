@@ -33,7 +33,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.xq.controller"))
+                .apis(RequestHandlerSelectors.basePackage("banxia.org.controller"))
                 .paths(selector)
                 .build();
     }

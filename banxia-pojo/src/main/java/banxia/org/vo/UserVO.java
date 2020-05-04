@@ -1,4 +1,4 @@
-package banxia.org.pojo;
+package banxia.org.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
@@ -13,88 +13,96 @@ import java.util.Date;
  * @author xiexin
  * @create 2020-04-07 4:45 下午
  */
-@ApiModel(value = "用户")
 @Table(name = "banxia_user")
-public class User {
+public class UserVO {
 
     /**
      * 自增id
      */
-    @ApiModelProperty(value = "用户id", name = "userId", example = "1", required = true)
     @Id
     private Integer userId;
 
     /**
      * 用户名称
      */
-    @ApiModelProperty(value = "用户名称", name = "userName", example = "1", required = true)
     private String userName;
 
     /**
      * 用户密码
      */
-    @ApiModelProperty(hidden = true)
     private String userPass;
 
     /**
      * 用户电话
      */
-    @ApiModelProperty(value = "用户电话", name = "userPhone", example = "1", required = true)
     private String userPhone;
 
     /**
      * 用户头像地址
      */
-    @ApiModelProperty(value = "用户头像地址", name = "userImage", example = "1", required = true)
     private String userImage;
 
     /**
      * 用户性别 0女1男
      */
-    @ApiModelProperty(value = "用户性别 0女1男", name = "userGender", example = "1", required = true)
     private Integer userGender;
 
     /**
      * 用户年纪
      */
-    @ApiModelProperty(value = "用户年纪", name = "userAge", example = "1", required = true)
     private Integer userAge;
 
     /**
      * 用户出生日期
      */
-    @ApiModelProperty(value = "用户出生日期", name = "userBirth", example = "1", required = true)
     private String userBirth;
 
     /**
      * 用户身高
      */
-    @ApiModelProperty(value = "用户身高", name = "userHeight", example = "1")
     private Integer userHeight;
 
     /**
      * 用户体重
      */
-    @ApiModelProperty(value = "用户体重", name = "userWeight", example = "1")
     private Integer userWeight;
 
     /**
      * 用户吸烟史 0无1有
      */
-    @ApiModelProperty(value = "用户吸烟史 0无1有", name = "userSmokeHist", example = "1")
     private Integer userSmokeHist;
 
     /**
      * 用户饮酒史 0无1有
      */
-    @ApiModelProperty(value = "用户饮酒史 0无1有", name = "userDrinkHist", example = "1")
     private Integer userDrinkHist;
 
     /**
      * 用户是否结婚 0无1有
      */
-    @ApiModelProperty(value = "用户是否结婚 0无1有", name = "userIsMarried", example = "1")
     private Integer userIsMarried;
+
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date createdAt;
+
+    /**
+     * 修改时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date updatedAt;
+
+    /**
+     * 创建者
+     */
+    private String createdBy;
+
+    /**
+     * 修改者
+     */
+    private String updatedBy;
 
     public Integer getUserId() {
         return userId;
@@ -198,5 +206,37 @@ public class User {
 
     public void setUserIsMarried(Integer userIsMarried) {
         this.userIsMarried = userIsMarried;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

@@ -12,14 +12,9 @@
         <result column="doc_phone" property="docPhone" jdbcType="CHAR" />
         <result column="doc_age" property="docAge" jdbcType="INTEGER" />
         <result column="doc_country" property="docCountry" jdbcType="VARCHAR" />
-        <result column="doc_nation" property="docName" jdbcType="VARCHAR" />
+        <result column="doc_nation" property="docNation" jdbcType="VARCHAR" />
         <result column="doc_address" property="docAddress" jdbcType="VARCHAR" />
-        <result column="doc_dep_id" property="docPedId" jdbcType="INTEGER" />
+        <result column="doc_dep_id" property="docDepId" jdbcType="INTEGER" />
         <result column="doc_gender" property="docGender" jdbcType="TINYINT" />
-        <result column="deleted" property="deleted" jdbcType="TINYINT" />
-        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
-        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
-        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
-        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 </mapper>
