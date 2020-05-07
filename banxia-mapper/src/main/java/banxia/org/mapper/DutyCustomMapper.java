@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface DutyCustomMapper extends MyMapper<DutyVO> {
     List<DutyVO> selectAllDuty(int depId, int noon, String starttime, String endtime);
+    List<DutyVO> selectDutyDoctors(int depId, String date);
 }

@@ -82,6 +82,8 @@ public class UserVO {
      */
     private Integer userIsMarried;
 
+    private String userToken;
+
     /**
      * 创建时间
      */
@@ -238,5 +240,13 @@ public class UserVO {
 
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public String getUserToken() {
+        return userToken;
+    }
+
+    public void setUserToken(String userToken) {
+        this.userToken = userToken;
     }
 }

@@ -1,9 +1,11 @@
 package banxia.org.service;
 
+import banxia.org.exception.BizException;
 import banxia.org.pojo.Treat;
 import banxia.org.pojo.User;
 import banxia.org.utils.ResultUtils;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -24,4 +26,6 @@ public interface UserService {
     boolean deleteUser(int userId);
 
     boolean queryPhoneIsExist(String phone);
+
+    User queryUserIsExist(String userPhone, String userPass) throws BizException, NoSuchAlgorithmException;
 }

@@ -25,4 +25,13 @@
         and duty.duty_date between '${starttime}' and '${endtime}'
         and duty_on_duty = 0
     </select>
+
+    <select id="selectDutyDoctors" resultMap="BaseResultMap">
+        select *
+        from banxia_duty
+        where duty_date = '${date}'
+        and duty_depart_id = ${depId}
+        and deleted = 0
+        group by duty_doc_id
+    </select>
 </mapper>

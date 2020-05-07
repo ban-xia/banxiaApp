@@ -6,6 +6,7 @@ import banxia.org.service.DoctorService;
 import banxia.org.utils.ResultUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,5 +78,15 @@ public class DoctorController extends BasicController {
             dataType = "String", paramType = "query")
     public ResultUtils delete(String docId) {
         return ResultUtils.ok(doctorService.deleteDoctor(Integer.parseInt(docId)));
+    }
+
+    @ApiOperation(value = "查询值班医生")
+    @GetMapping("/queryOnDuty")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "depId", value = "部门Id", required = true,
+                    dataType = "String", paramType = "query")
+    })
+    public ResultUtils queryOnDuty(String depId, String date) {
+        return ResultUtils.ok(doctorService.queryOnDuty(Integer.parseInt(depId), date));
     }
 }

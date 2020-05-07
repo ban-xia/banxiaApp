@@ -1,16 +1,19 @@
 package banxia.org.service.impl;
 
+import banxia.org.exception.BizException;
 import banxia.org.mapper.UserMapper;
 import banxia.org.pojo.Department;
 import banxia.org.pojo.Record;
 import banxia.org.pojo.Treat;
 import banxia.org.pojo.User;
 import banxia.org.service.UserService;
+import banxia.org.utils.MD5Utils;
 import banxia.org.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -69,5 +72,21 @@ public class UserServiceImpl implements UserService {
         User res = userMapper.selectOne(user);
 
         return res != null;
+    }
+
+    @Override
+    public User queryUserIsExist(String userPhone, String userPass) throws BizException, NoSuchAlgorithmException {
+        User user = new User();
+        user.setUserPhone(userPhone);
+
+        User res = userMapper.selectOne(user);
+
+        if (res == null) {
+            throw new BizException("用户名不存在");
+        } else if (!MD5Utils.getMD5Str(userPass).equals(res.getUserPass())){
+            throw new BizException("密码不正确");
+        }
+
+        return res;
     }
 }

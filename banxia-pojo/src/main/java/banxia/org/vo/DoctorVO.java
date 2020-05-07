@@ -45,6 +45,8 @@ public class DoctorVO {
 
     private String updatedBy;
 
+    private String doctorToken;
+
     public Integer getDocId() {
         return docId;
     }
@@ -163,5 +165,13 @@ public class DoctorVO {
 
     public void setDepName(String depName) {
         this.depName = depName;
+    }
+
+    public String getDoctorToken() {
+        return doctorToken;
+    }
+
+    public void setDoctorToken(String doctorToken) {
+        this.doctorToken = doctorToken;
     }
 }

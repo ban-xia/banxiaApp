@@ -1,8 +1,11 @@
 package banxia.org.service;
 
+import banxia.org.exception.BizException;
 import banxia.org.pojo.Doctor;
 import banxia.org.utils.PagedResult;
+import banxia.org.vo.DoctorVO;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -22,4 +25,7 @@ public interface DoctorService {
 
     boolean deleteDoctor(int docId);
 
+    Doctor queryUserIsExist(String docNum, String docPassword) throws BizException, NoSuchAlgorithmException;
+
+    List<DoctorVO> queryOnDuty(int depId, String date);
 }
